@@ -91,7 +91,7 @@ public class Library {
                 System.out.println(book);
                 isOut = true;
             } else {
-                System.out.println(book.getId() + "this Book is currently in");
+                System.out.println("Title: " + book.getTitle() + "| Id number: " + book.getId()+ ": is currently in");
             }
 
         }
