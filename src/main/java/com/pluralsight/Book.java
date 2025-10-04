@@ -77,6 +77,6 @@ public class Book {
     public void checkIn() {
         this.isCheckedOut = false;
         this.checkedOutTo = null;
-
+//
     }
 }
