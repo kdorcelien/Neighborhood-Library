@@ -33,7 +33,7 @@ public class Library {
             System.out.println("==== Home Screen ===");
             System.out.println(" 1 - Available Books: ");
             System.out.println(" 2 - Checked Out Books: ");
-            System.out.println(" 3 - Quit\\n");
+            System.out.println(" 3 - Quit \n");
 
             System.out.print("Enter your command: ");
             int command = input.nextInt();
@@ -57,13 +57,11 @@ public class Library {
     }
 
     public static void availableBooks(Book[] books, Scanner input) {
-        boolean canCheckOut = false;
         for (Book book : books) {
             if (!book.isCheckedOut()) {
                 System.out.println(book);
-                canCheckOut = true;
             } else {
-                System.out.println("No available Book");
+                System.out.println("The Book: " + book.getTitle() + ", is currently checked out");
             }
         }
         System.out.println("Enter book ID to check out, or X to return: ");
@@ -75,7 +73,7 @@ public class Library {
                 System.out.print("Enter your name: ");
                 String name = input.nextLine();
                 book.checkOut(name);
-                System.out.println("This Book is checked out to: " + name);
+                System.out.println("The Book: " + book.getTitle() + " has successfully been checked out to: " + name);
             } else {
                 System.out.println("404 Error -UNKNOWN-");
             }
@@ -85,13 +83,11 @@ public class Library {
 
 
     public static void checkedOutBooks(Book[] books, Scanner input) {
-        boolean isOut = false;
         for (Book book : books) {
             if (book.isCheckedOut()) {
                 System.out.println(book);
-                isOut = true;
             } else {
-                System.out.println("Title: " + book.getTitle() + "| Id number: " + book.getId()+ ": is currently in");
+                System.out.println("Title: " + book.getTitle() + "| Id number: " + book.getId() + ": is currently in");
             }
 
         }
